@@ -1,0 +1,5 @@
+if(ROBOT STREQUAL "differential")
+  add_subdirectory(differential)
+elseif(ROBOT STREQUAL "omni")
+  add_subdirectory(omni)
+endif()
