@@ -1,0 +1,1 @@
+add_executable(tutorial2 tutorial2.cpp)
