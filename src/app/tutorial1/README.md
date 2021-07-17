@@ -21,7 +21,7 @@ g++ -o <target name> <file name>
 ```
   
 ```
-$ g++ -o tutorial1 ./tutorial.c
+$ g++ -o tutorial1 ./tutorial1.c
 $ ./tutorial1
 ```
 
@@ -29,6 +29,14 @@ $ ./tutorial1
 
 ```
 I am tutorial 1
+```
+
+## With Makefile
+
+- You can remove the executable above and try with Makefile, they are doing the same thing
+
+```
+$ make -j
 ```
 
 ## With CMake
