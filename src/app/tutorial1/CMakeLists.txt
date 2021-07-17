@@ -1,1 +1,1 @@
-add_executable(tutorial1 tutorial1.cpp)
+add_executable(tutorial1 tutorial1.c)

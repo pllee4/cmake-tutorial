@@ -1,15 +1,13 @@
 /* 
- * tutorial1.cpp
+ * tutorial1.c
  * Created on: Jul 15, 2021 22:39
  * Description: 
  * 
  * Copyright (c) 2021 Pin Loon Lee (pllee4)
  */ 
-
-#include "tutorial1.hpp"
-
-#include <iostream>
+ 
+#include <stdio.h>
 
 int main() {
-    std::cout << "I am tutorial 1" << std::endl;
+    printf("I am tutorial 1\n");
 }
