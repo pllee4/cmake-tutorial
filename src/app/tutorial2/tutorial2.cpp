@@ -9,5 +9,5 @@
 #include "print/print.hpp"
 
 int main() {
-  print("I am tutorial2");
+    print("I am tutorial 2");
 }
