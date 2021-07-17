@@ -1,1 +1,2 @@
 add_subdirectory(tutorial1)
+add_subdirectory(tutorial2)
