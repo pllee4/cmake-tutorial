@@ -16,7 +16,10 @@ CMakeLists.txt README.md tutorial1.c
 
 ## Run the program with g++
 
-- g++ -o <target name> <file name>
+```
+g++ -o <target name> <file name>
+```
+  
 ```
 $ g++ -o tutorial1 ./tutorial.c
 $ ./tutorial1
