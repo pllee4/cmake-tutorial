@@ -32,5 +32,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with: 
-          name: store .deb package
-          path: cmake_template_*.deb
+          name: package
+          path: build/cmake_template_*.deb
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
