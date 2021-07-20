@@ -1,5 +1,8 @@
+set(ROBOT_INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/interface)
 if(ROBOT STREQUAL "differential")
   add_subdirectory(differential)
 elseif(ROBOT STREQUAL "omni")
   add_subdirectory(omni)
+else()
+  message(FATAL_ERROR "${ROBOT} robot not supported!")
 endif()
