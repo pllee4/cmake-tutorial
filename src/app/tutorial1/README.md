@@ -11,7 +11,7 @@ $ ls
 - You should be able to see
 
 ```
-CMakeLists.txt README.md tutorial1.c
+CMakeLists.txt Makefile README.md tutorial1.c
 ```
 
 ## Run the program with g++
