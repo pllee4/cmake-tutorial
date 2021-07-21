@@ -6,6 +6,12 @@
 
 ![image](https://user-images.githubusercontent.com/42335542/126165099-c37f4bdd-91a2-4736-9a7a-fd1a19d82c5d.png)
 
+## Dependencies
+
+```
+$ sudo apt install build-essential
+```
+
 ## Get started
 
 ```
