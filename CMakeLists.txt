@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.13.1)
 
 # set the project name and version
-project(cmake_template LANGUAGES C CXX VERSION 1.2.3)
+project(cmake_tutorial LANGUAGES C CXX VERSION 1.0.0)
 
 ## project options
 option(BUILD_TESTING "Build tests" OFF)
