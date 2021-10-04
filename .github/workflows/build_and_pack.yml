@@ -35,8 +35,9 @@ jobs:
       - name: Build
         run: mkdir build && cd build && cmake .. && cmake --build .    
   pack:
-    needs: build
-    runs-on: ubuntu-latest
+    ## currently pack only at ubuntu-20.04
+    needs: focal-build
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
       - name: Pack
