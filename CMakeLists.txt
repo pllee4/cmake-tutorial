@@ -1,5 +1,5 @@
 # set minimum version required for cmake
-cmake_minimum_required(VERSION 3.13.1)
+cmake_minimum_required(VERSION 3.10.2)
 
 # set the project name and version
 project(cmake_tutorial LANGUAGES C CXX VERSION 1.0.0)
@@ -27,8 +27,17 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${CMAKE_INSTALL_BINDIR}
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 
+## check distro
+execute_process(COMMAND lsb_release -cs
+    OUTPUT_VARIABLE RELEASE_CODENAME
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+)
 ## find package
-find_package(Python3 REQUIRED)
+if (RELEASE_CODENAME STREQUAL "bionic")
+  find_package(PythonLibs 3 REQUIRED)
+elseif (RELEASE_CODENAME STREQUAL "focal")
+  find_package(Python3 REQUIRED)
+endif()
 
 ## although there is no OpenCV package installed, it will not have error
 find_package(OpenCV QUIET)
@@ -44,7 +53,11 @@ include(${PROJECT_SOURCE_DIR}/cmake/MakeCalendar.cmake)
 add_subdirectory(src)
 
 ## install package
-install(TARGETS tutorial1 tutorial2 tutorial3 DESTINATION bin)
+if (${CMAKE_VERSION} VERSION_GREATER_EQUAL 3.11)
+  install(TARGETS tutorial1 tutorial2 tutorial3 DESTINATION bin)
+else()
+  message(WARNING "No target would be installed, please consider update the cmake version")
+endif()
 
 # Packaging support
 set(CPACK_PACKAGE_VENDOR "Pin Loon")
