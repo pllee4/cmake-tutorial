@@ -46,6 +46,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with: 
           name: package
-          path: build/cmake_template_*.deb
+          path: build/cmake_tutorial_*.deb
       - name: Download artifacts
         uses: actions/download-artifact@v2
