@@ -18,14 +18,48 @@ $ sudo apt install build-essential
 $ cd src/app
 ```
 
-- Follow the README.md starting from tutorial1 to tutorial3
+- Follow the README.md in each folder of tutorial starting from tutorial1 to tutorial3
 
 ## Using CMake
 
+- Make sure you are at top level directory of this repo
+  
+```
+$ ls
+```
+
+- You should be able to see
+
+```
+cmake CMakeLists.txt docs README.md src
+```
+
+- Now run the following command:
+  
 ```
 $ mkdir build
 $ cd build
 $ cmake ..
 $ cmake --build .
+```
+
+- You should be able to see all the program under build/bin directory
+
+- To pack the program, currently applicable under cmake version greater than 3.11 in this repo,
+  go to build directory then
+
+```
 $ cpack
 ```
+
+- You should see a .deb package with named cmake_tutorial_1.0.0_architecture for example
+  cmake_tutorial_1.0.0_amd64.deb
+```
+$ sudo dpkg -i cmake_tutorial_1.0.0_amd64.deb
+```
+
+- The package in installed under /opt/cmake_tutorial
+
+## References
+- For detail information, kindly refer to [cmake guide](https://cmake.org/cmake/help/latest/guide/tutorial/index.html)
+- If you are interested in getting to know how compiler works, [this](https://www.youtube.com/watch?v=4V9QWHjRPMc) will give some insights.
