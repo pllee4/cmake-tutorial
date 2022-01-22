@@ -33,9 +33,24 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build
-        run: mkdir build && cd build && cmake .. && cmake --build .    
-  pack:
-    ## currently pack only at ubuntu-20.04
+        run: mkdir build && cd build && cmake .. && cmake --build .   
+
+  bionic-pack:
+    needs: bionic-build
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Pack
+        run: mkdir build && cd build && cmake .. && cmake --build . && cpack
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with: 
+          name: bionic-cmake_tutorial
+          path: build/cmake_tutorial_*.deb
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+ 
+  focal-pack:
     needs: focal-build
     runs-on: ubuntu-20.04
     steps:
@@ -45,7 +60,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with: 
-          name: package
+          name: focal-cmake_tutorial
           path: build/cmake_tutorial_*.deb
       - name: Download artifacts
         uses: actions/download-artifact@v2
