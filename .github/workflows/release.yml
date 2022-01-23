@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - release
+  pull_request:
+    branches:
+      - release
+  workflow_run:
+    workflows: ["Build and Pack"]
+    branches:
+      - release
+    types: 
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Pack
+        run: mkdir build && cd build && cmake .. && cmake --build . && cpack
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with: 
+          name: cmake_tutorial
+          path: build/cmake_tutorial_*.deb
+      - uses: actions/download-artifact@v2
+      - name: Download artifacts
+        run: |
+          export DEB_PKG=$(find . -type f -name "cmake_tutorial_*.deb" -exec basename {} \;)
+          echo -e "Debian package found: ${DEB_PKG}"
+      # - uses: retgits/actions/jfrog-cli@master
+      # - name: Release
+      #   shell: bash
+      #   run: curl -u ${{secrets.ARTIFACTORY_USER}}:${{secrets.ARTIFACTORY_KEY}} -XPUT "${{secrets.ARTIFACTORY_URL}}/bionic/${DEB_PKG};deb.distribution=bionic;deb.component=main;deb.architecture=amd64" -T ./package/${DEB_PKG} 
