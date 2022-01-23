@@ -8,6 +8,9 @@
 *.exe
 *.elf
 
+.vscode
+log/
+
 src/app/tutorial*/tutorial1
 src/app/tutorial*/tutorial2
 src/app/tutorial*/tutorial3
