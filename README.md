@@ -1,8 +1,8 @@
 # cmake-tutorial
 
 ![master](https://github.com/pllee4/cmake-tutorial/actions/workflows/build_and_pack.yml/badge.svg)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cmake-tutorial&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=cmake-tutorial)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=cmake-tutorial&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=cmake-tutorial)
+<!-- [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cmake-tutorial&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=cmake-tutorial)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=cmake-tutorial&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=cmake-tutorial) -->
 
 ## Build process in C/C++
 
