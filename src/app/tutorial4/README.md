@@ -60,7 +60,7 @@ $ mkdir build
 $ cd build
 $ cmake ..
 $ make -j
-$ ./tutorial4
+$ ./bin/tutorial4
 ```
 
 ## Behind CMake
