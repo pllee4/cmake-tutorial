@@ -22,6 +22,13 @@ message(STATUS "Selected robot: " ${ROBOT})
 
 include(GNUInstallDirs)
 
+# Relative path for shared libraries
+file(RELATIVE_PATH relDir
+  ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_INSTALL_BINDIR}
+  ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}
+)
+set(CMAKE_INSTALL_RPATH $ORIGIN $ORIGIN/${relDir})
+
 ## Put all binary files into /bin and libraries into /lib
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
@@ -54,7 +61,10 @@ add_subdirectory(src)
 
 ## install package
 if (${CMAKE_VERSION} VERSION_GREATER_EQUAL 3.11)
-  install(TARGETS tutorial1 tutorial2 tutorial3 DESTINATION bin)
+  install(TARGETS tutorial1 tutorial2 tutorial3 tutorial4 printv1 
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
 else()
   message(WARNING "No target would be installed, please consider update the cmake version")
 endif()
