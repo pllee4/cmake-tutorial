@@ -3,7 +3,7 @@
 ![master](https://github.com/pllee4/cmake-tutorial/actions/workflows/build_and_pack.yml/badge.svg)
 <!-- [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cmake-tutorial&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=cmake-tutorial)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=cmake-tutorial&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=cmake-tutorial) -->
-
+<a href='https://ko-fi.com/pinloon' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi3.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' />
 ## Build process in C/C++
 
 ![image](https://user-images.githubusercontent.com/42335542/126165099-c37f4bdd-91a2-4736-9a7a-fd1a19d82c5d.png)
